@@ -93,11 +93,12 @@ dt_poverty <- c('Zip Code', 'Population', 'Poor or Struggling', 'Doing Okay')
 ui <- fluidPage(
   
   # theme
-  shinytheme("united"),
+  theme = shinytheme("simplex"),
   
-  # Application title & subtitle
+  # Application title, subtitle, and byline
   titlePanel(shiny::tags$h1(HTML("<strong>Los Angeles County Supervisorial District Census Data<strong/>"))),
   titlePanel(h3("Proportionally Allocated by Zip Code Tabulated Areas (ZCTA)")),
+  titlePanel(h5("Tabulated by Joel Montano")),
   
   
   # Sidebar layout 
@@ -254,8 +255,13 @@ server <- function(input, output) {
                   colnames = dt_pop,
                   caption = "Data Source: 2019 American Community Survey (5-Year Estimates)",
                   extensions = "Buttons",
-                  options = list(dom = "lfrtBip",
-                                 buttons = 'csv',
+                  options = list(order = list(list(0, 'asc')),
+                                 dom = "lfrtBip",
+                                 buttons = list(list(extend = 'csv', 
+                                                     filename = paste("Supervisor", 
+                                                                      input$sd, 
+                                                                      input$category,
+                                                                      "by ZCTA"))),
                                  lengthMenu = list(20, 40, 60, 80),
                                  pageLength = 20)) %>% 
         formatPercentage('Proportion_in_SD') %>% 
@@ -274,8 +280,13 @@ server <- function(input, output) {
                   colnames = dt_race,
                   caption = "Data Source: 2019 American Community Survey (5-Year Estimates)",
                   extensions = "Buttons",
-                  options = list(dom = "lfrtBip",
-                                 buttons = 'csv',
+                  options = list(order = list(list(0, 'asc')),
+                                 dom = "lfrtBip",
+                                 buttons = list(list(extend = 'csv', 
+                                                     filename = paste("Supervisor", 
+                                                                      input$sd, 
+                                                                      input$category,
+                                                                      "by ZCTA"))),
                                  lengthMenu = list(20, 40, 60, 80),
                                  pageLength = 20)) %>% 
         formatPercentage(c('Latinx', 'Black', 'Asian', 'White')) %>% 
@@ -294,8 +305,13 @@ server <- function(input, output) {
                   colnames = dt_edu,
                   caption = "Data Source: 2019 American Community Survey (5-Year Estimates)",
                   extensions = "Buttons",
-                  options = list(dom = "lfrtBip",
-                                 buttons = 'csv',
+                  options = list(order = list(list(0, 'asc')),
+                                 dom = "lfrtBip",
+                                 buttons = list(list(extend = 'csv', 
+                                                     filename = paste("Supervisor", 
+                                                                      input$sd, 
+                                                                      input$category,
+                                                                      "by ZCTA"))),
                                  lengthMenu = list(20, 40, 60, 80),
                                  pageLength = 20)) %>% 
         formatPercentage(c('Less_than_HH', 'HS_Diploma', 'Bachelors_or_Higher')) %>% 
@@ -313,8 +329,13 @@ server <- function(input, output) {
                   colnames = dt_imm,
                   caption = "Data Source: 2019 American Community Survey (5-Year Estimates)",
                   extensions = "Buttons",
-                  options = list(dom = "lfrtBip",
-                                 buttons = 'csv',
+                  options = list(order = list(list(0, 'asc')),
+                                 dom = "lfrtBip",
+                                 buttons = list(list(extend = 'csv', 
+                                                     filename = paste("Supervisor", 
+                                                                      input$sd, 
+                                                                      input$category,
+                                                                      "by ZCTA"))),
                                  lengthMenu = list(20, 40, 60, 80),
                                  pageLength = 20)) %>%
         formatPercentage(c('Native_Born', 'Immigrant_Citizen', 'Immigrant_Undocumented')) %>% 
@@ -332,8 +353,13 @@ server <- function(input, output) {
                   colnames = dt_housing,
                   caption = "Data Source: 2019 American Community Survey (5-Year Estimates)",
                   extensions = "Buttons",
-                  options = list(dom = "lfrtBip",
-                                 buttons = 'csv',
+                  options = list(order = list(list(0, 'asc')),
+                                 dom = "lfrtBip",
+                                 buttons = list(list(extend = 'csv', 
+                                                     filename = paste("Supervisor", 
+                                                                      input$sd, 
+                                                                      input$category,
+                                                                      "by ZCTA"))),
                                  lengthMenu = list(20, 40, 60, 80),
                                  pageLength = 20)) %>%
         formatPercentage(c('Owner_Units', 'Renter_Units', 'Rent_Burden', 'Severe_Rent_Burden')) %>% 
@@ -351,8 +377,13 @@ server <- function(input, output) {
                   colnames = dt_income,
                   caption = "Data Source: 2019 American Community Survey (5-Year Estimates)",
                   extensions = "Buttons",
-                  options = list(dom = "lfrtBip",
-                                 buttons = 'csv',
+                  options = list(order = list(list(0, 'asc')),
+                                 dom = "lfrtBip",
+                                 buttons = list(list(extend = 'csv', 
+                                                     filename = paste("Supervisor", 
+                                                                      input$sd, 
+                                                                      input$category,
+                                                                      "by ZCTA"))),
                                  lengthMenu = list(20, 40, 60, 80),
                                  pageLength = 20)) %>% 
         formatCurrency(c('Median_HH_Income', 'Per_Capita_Income'),
@@ -365,8 +396,13 @@ server <- function(input, output) {
                   colnames = dt_poverty,
                   caption = "Data Source: 2019 American Community Survey (5-Year Estimates)",
                   extensions = "Buttons",
-                  options = list(dom = "lfrtBip",
-                                 buttons = 'csv',
+                  options = list(order = list(list(0, 'asc')),
+                                 dom = "lfrtBip",
+                                 buttons = list(list(extend = 'csv', 
+                                                     filename = paste("Supervisor", 
+                                                                      input$sd, 
+                                                                      input$category,
+                                                                      "by ZCTA"))),
                                  lengthMenu = list(20, 40, 60, 80),
                                  pageLength = 20)) %>% 
         formatPercentage(c('Poor_or_Struggling', 'Doing_Okay')) %>% 
