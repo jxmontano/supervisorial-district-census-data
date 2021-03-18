@@ -8,19 +8,19 @@ library(tidyverse)
 library(scales)
 
 # Data Import 
-sd1_zcta <- read.csv("~/R/R Shiny Apps/Census Data/Supervisorial_District_Census_Data/data/sd1_zcta.csv", 
+sd1_zcta <- read.csv("~/R/R Projects/supervisorial-district-census-data/Shiny_app/data/sd1_zcta.csv", 
                      stringsAsFactors = FALSE)
 
-sd2_zcta <- read.csv("~/R/R Shiny Apps/Census Data/Supervisorial_District_Census_Data/data/sd2_zcta.csv",
+sd2_zcta <- read.csv("~/R/R Projects/supervisorial-district-census-data/Shiny_app/data/sd2_zcta.csv",
                      stringsAsFactors = FALSE)
 
-sd3_zcta <- read.csv("~/R/R Shiny Apps/Census Data/Supervisorial_District_Census_Data/data/sd3_zcta.csv",
+sd3_zcta <- read.csv("~/R/R Projects/supervisorial-district-census-data/Shiny_app/data/sd3_zcta.csv",
                      stringsAsFactors = FALSE)
 
-sd4_zcta <- read.csv("~/R/R Shiny Apps/Census Data/Supervisorial_District_Census_Data/data/sd4_zcta.csv",
+sd4_zcta <- read.csv("~/R/R Projects/supervisorial-district-census-data/Shiny_app/data/sd4_zcta.csv",
                      stringsAsFactors = FALSE)
 
-sd5_zcta <- read.csv("~/R/R Shiny Apps/Census Data/Supervisorial_District_Census_Data/data/sd5_zcta.csv",
+sd5_zcta <- read.csv("~/R/R Projects/supervisorial-district-census-data/Shiny_app/data/sd5_zcta.csv",
                      stringsAsFactors = FALSE)
 
 # SD zip codes 
